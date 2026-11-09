@@ -7,7 +7,7 @@ Actions and Azure DevOps (skills often asked for in QA / test automation roles).
 
 - [x] Day 1 — setup: Playwright + TS, lint, first smoke test (home page loads, search works),
       GitHub Actions running tests on every PR, HTML report as CI artifact
-- [ ] Day 2 — `docs/test-strategy.md` (scope, risks, what to automate and why, what stays
+- [x] Day 2 — `docs/test-strategy.md` (scope, risks, what to automate and why, what stays
       manual) + `docs/test-cases.md` (15–25 cases with IDs, priority, steps, expected result)
 - [ ] Day 3 — Page Objects + UI tests for the top-risk flows: login, search/filter,
       product page, cart, checkout (happy path + key negative cases)
@@ -28,12 +28,21 @@ Actions and Azure DevOps (skills often asked for in QA / test automation roles).
   - Found and fixed a race in the search test (stale product grid after the caption appears;
     the search API uses the HTTP `QUERY` method).
 
+- **Day 2 (branch `day-2-docs`):** `docs/test-strategy.md` (scope, risk matrix R1–R8, test
+  levels, automate/manual rules, test data, environments, entry/exit criteria) and
+  `docs/test-cases.md` (25 cases: 12 P1, 10 P2, 3 P3; 22 to automate, 3 manual with reasons).
+  TC-SMOKE-01/02 match the existing tests. Docs only, no test changes.
+
 ## Next
 
-- Day 2: `docs/test-strategy.md` + `docs/test-cases.md`; replace provisional TC-SMOKE IDs
-  if the final ID scheme differs.
+- Day 3: Page Objects + UI tests for the P1/P2 UI cases planned for Day 3 in
+  `docs/test-cases.md` (auth, search/filter/sort, product, cart, checkout).
 
 ## Open questions
+
+- Login tests need the demo customer credentials as `CUSTOMER_EMAIL` / `CUSTOMER_PASSWORD`
+  (local `.env` + GitHub Actions secrets) before Day 3. They are published by the site
+  maintainers, but rule 6 keeps them out of the repo.
 
 - Scheduled daily CI run not added yet (rule 4 allows at most one per day). Add it in Day 6
   together with the reliability work?
