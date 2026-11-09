@@ -1,0 +1,40 @@
+{
+  "name": "toolshop-e2e-tests",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript E2E and API tests for the Toolshop demo shop",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test tests/ui",
+    "test:api": "playwright test tests/api --pass-with-no-tests",
+    "test:smoke": "playwright test --grep @smoke",
+    "report": "playwright show-report",
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "typecheck": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ko4an27/toolshop-e2e-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ko4an27/toolshop-e2e-tests/issues"
+  },
+  "homepage": "https://github.com/ko4an27/toolshop-e2e-tests#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.12.2",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}
