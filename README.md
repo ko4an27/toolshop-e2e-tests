@@ -6,8 +6,15 @@ UI end-to-end and API tests for the [Toolshop](https://practicesoftwaretesting.c
 (open source: [testsmith-io/practice-software-testing](https://github.com/testsmith-io/practice-software-testing)),
 written with **Playwright + TypeScript**.
 
-> Status: **Day 1 — project setup.** The test strategy, test cases, page objects and API tests
-> come in later steps (see [PROGRESS.md](PROGRESS.md)).
+> Status: **Day 2 — test strategy and test cases written.** Page objects, more UI tests and API
+> tests come in later steps (see [PROGRESS.md](PROGRESS.md)).
+
+## Documentation
+
+- [Test strategy](docs/test-strategy.md) — scope, risks, what is automated and why, what stays
+  manual, test levels, environments, entry/exit criteria
+- [Test cases](docs/test-cases.md) — 25 cases with IDs, priority, steps, expected result and an
+  automate yes/no decision with a reason
 
 ## Quick start
 
@@ -34,7 +41,7 @@ Optional: copy `.env.example` to `.env` to point the suite at another instance (
 | TC-SMOKE-02 | Product search returns only matching products | UI, smoke |
 
 Not covered yet: login, filters, product page, cart, checkout, API tests, cross-browser.
-IDs are provisional until `docs/test-cases.md` exists (Day 2).
+The full plan (25 cases, 22 to automate) is in [docs/test-cases.md](docs/test-cases.md).
 
 ## Design choices
 
