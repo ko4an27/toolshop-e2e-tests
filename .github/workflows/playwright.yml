@@ -40,6 +40,9 @@ jobs:
 
       - name: Run tests
         run: npm test
+        env:
+          CUSTOMER_EMAIL: ${{ secrets.CUSTOMER_EMAIL }}
+          CUSTOMER_PASSWORD: ${{ secrets.CUSTOMER_PASSWORD }}
 
       - name: Upload HTML report
         if: ${{ !cancelled() }}

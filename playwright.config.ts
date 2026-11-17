@@ -7,6 +7,14 @@ import { defineConfig, devices } from '@playwright/test';
  * so we keep parallelism low (workers <= 2) and allow at most one retry in CI.
  * Retries are reported in the HTML report, never hidden.
  */
+// Local runs: load variables from .env (Node's built-in loader, no extra package).
+// In CI there is no .env file; the variables come from GitHub Actions secrets.
+try {
+  process.loadEnvFile();
+} catch {
+  // No .env file — that's fine.
+}
+
 const isCI = !!process.env.CI;
 
 export default defineConfig({
